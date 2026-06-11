@@ -1,29 +1,57 @@
 {
   "name": "frontgraph",
   "version": "0.1.0",
-  "description": "Frontgraphs reference engine — a living dependency graph embedded in your source code via @graph blocks, queryable by humans (CLI) and AI agents (MCP).",
+  "description": "Reference engine for FRONTGRAPH-SPEC — a living dependency graph embedded in your source code via @graph blocks: AST-derived truth, drift detection, token-budgeted agent briefs, and multi-agent coordination. CLI for humans, MCP for AI agents.",
+  "keywords": [
+    "ai-agents",
+    "dependency-graph",
+    "context-engineering",
+    "mcp",
+    "model-context-protocol",
+    "architecture",
+    "drift-detection",
+    "multi-agent",
+    "claude"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandreGSilva07/frontgraph.git"
+  },
+  "homepage": "https://github.com/AlexandreGSilva07/frontgraph#readme",
+  "bugs": "https://github.com/AlexandreGSilva07/frontgraph/issues",
+  "license": "MIT",
   "type": "module",
-  "private": true,
   "engines": {
     "node": ">=18"
   },
-  "exports": {
-    "./parser": "./src/parser.ts",
-    "./graph": "./src/graph.ts",
-    "./derive": "./src/derive.ts",
-    "./sync": "./src/sync.ts",
-    "./brief": "./src/brief.ts",
-    "./staleness": "./src/staleness.ts",
-    "./leases": "./src/leases.ts",
-    "./work-orders": "./src/work-orders.ts",
-    "./onboard": "./src/onboard.ts"
+  "bin": {
+    "frontgraph": "./dist/cli.js",
+    "frontgraph-mcp": "./dist/mcp-server.js"
   },
+  "exports": {
+    "./parser": "./dist/parser.js",
+    "./graph": "./dist/graph.js",
+    "./derive": "./dist/derive.js",
+    "./sync": "./dist/sync.js",
+    "./brief": "./dist/brief.js",
+    "./staleness": "./dist/staleness.js",
+    "./leases": "./dist/leases.js",
+    "./work-orders": "./dist/work-orders.js",
+    "./onboard": "./dist/onboard.js"
+  },
+  "files": [
+    "dist",
+    "SPEC.md",
+    "COORDINATION.md"
+  ],
   "scripts": {
+    "build": "tsup",
     "cli": "tsx src/cli.ts",
     "mcp": "tsx src/mcp-server.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
@@ -32,6 +60,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.0",
+    "tsup": "^8.5.1",
     "tsx": "^4.22.4",
     "vitest": "^3.1.0"
   }
