@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "frontgraph": {
+      "type": "stdio",
+      "command": "C:\\Users\\Alexandre Silva\\Desktop\\GDD\\frontgraph\\node_modules\\.bin\\tsx.cmd",
+      "args": [
+        "C:\\Users\\Alexandre Silva\\Desktop\\GDD\\frontgraph\\src\\mcp-server.ts",
+        "C:\\Users\\Alexandre Silva\\Desktop\\GDD\\teste"
+      ]
+    }
+  }
+}

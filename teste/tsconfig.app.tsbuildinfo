@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/orderform.tsx","./src/logic/order-machine.ts","./src/logic/pricing.ts","./src/logic/validation.ts","./src/types/orders.ts"],"version":"5.8.3"}

@@ -1,0 +1,31 @@
+{
+  "categories_meta": {
+    "root": {
+      "description": "root files",
+      "color": "#8b949e"
+    },
+    "components": {
+      "description": "components files",
+      "color": "#8b949e"
+    },
+    "logic": {
+      "description": "Business logic, pure functions, engines",
+      "color": "#3fb950"
+    },
+    "types": {
+      "description": "types files",
+      "color": "#8b949e"
+    }
+  },
+  "methodologies_meta": {
+    "cdd": {
+      "contractsPath": "src/types"
+    }
+  },
+  "architectureRules": {
+    "no_ui_in_logic_deps": true,
+    "contract_at_layer_zero": true,
+    "no_circular_deps": true,
+    "enforce_doc_for_all_nodes": false
+  }
+}

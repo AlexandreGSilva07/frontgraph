@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Frontgraph runtime state (coordination + caches are local, rebuildable)
+.frontgraph/
+
+# Build output
+dist/
+
+# Logs and OS noise
+*.log
+Thumbs.db
+.DS_Store
+
+# Claude Code local settings (personal)
+.claude/settings.local.json
